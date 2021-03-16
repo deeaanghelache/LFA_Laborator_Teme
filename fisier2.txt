@@ -1,0 +1,38 @@
+Transitions:
+	1, 1, sad
+	1, b, happy
+	sad, a, happy
+	happy, a, 1
+	2, a, 3
+	2, 1, 1
+	3, b, 2
+	3, b, d # eroare, deoarece nu exista starea d
+	3, cuvanNou, 1 # eroare, deoarece nu exista cuvantul
+
+End
+#
+# Si avem urmatoarele stari
+#
+States:
+	1, S # eroare, deoarece are mai mult decat o stare initiala
+	2, S
+	4 #gdhfjfj
+	3
+	sad
+	happy, F
+	12, F, S
+End
+#
+# Si urmatoarele tranzitii
+#
+
+#
+# Sigma contine cuvintele (sau litere poti considera):
+#
+Sigma:
+	a
+	b
+	c
+	1
+End
+
