@@ -9,27 +9,27 @@ End
 # comment l i n e s ( s k i p them )
 #
 States:
-    A, S
+    S, S
+    A
     B
     C
-    D
+    D, F
     E, F
-    F, F
 End
 #
 # comment l i n e s ( s k i p them )
 #
 Transitions:
-    A, 0, B
-    A, 1, A
-    B, 0, A
-    B, 1, C
-    C, 0, D
-    C, 1, A
-    D, 0, A
-    D, 1, E
-    E, 0, F
-    E, 1, F
-    F, 0, F
-    F, 1, F
+    S, 0, A
+    A, 0, C
+    A, 1, C
+    C, 0, E
+    C, 1, E
+    E, 0, C
+    E, 1, C
+    S, 1, B
+    B, 0, D
+    B, 1, D
+    D, 0, B
+    D, 1, B
 End

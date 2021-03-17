@@ -2,15 +2,18 @@
 import sys
 # print(sys.argv)
 
-#un cuvant primeste sys.argv[1]
+#un cuvant primeste sys.argv[2]
 
 def acceptor(cuvant):
     # global stare_initiala, stari_finale, states, words, transitions, verif
-    # ok = 0
     StareCurenta = stare_initiala
     lungimeCuvant = len(cuvant)
 
-    if verif == 0: #are o singura stare initiala
+    if verif == 0:  #are o singura stare initiala
+        if len(cuvant)==0 and stare_initiala in stari_finale:
+            return "is accepted"
+        elif len(cuvant)==0 and stare_initiala not in stari_finale:
+            return "is NOT accepted"
         for i in range(len(cuvant)):  #parcurgem literele cuvantului dat
             ok=0
             for transition in transitions:
@@ -80,7 +83,6 @@ for i in range(len(text)):
             break
 
 states = states[:len(states)-1]
-
 ok = 0
 
 for i in range(len(text)):
@@ -98,16 +100,19 @@ for i in range(len(text)):
     if text[i] == "End" and ok == 1:
         break
 
-print(f"Cuvantul {sys.argv[2]} {acceptor(sys.argv[2])}")
+if len(sys.argv[2])!=0:
+    print(f"Word {sys.argv[2]} {acceptor(sys.argv[2])}")
+else:
+    print(f"The empty string {acceptor(sys.argv[2])} ")
 
-print("\n")
-
-print(f"Sigma este: {words}")
-print(f"Starile sunt {states}")
-print(f"Starea initiala este: {stare_initiala}")
-print(f"Starile finale sunt: {stari_finale}")
-print(f"Tranzitiile sunt: {transitions}")
-
+# print("\n")
+#
+# print(f"Sigma este: {words}")
+# print(f"Starile sunt {states}")
+# print(f"Starea initiala este: {stare_initiala}")
+# print(f"Starile finale sunt: {stari_finale}")
+# print(f"Tranzitiile sunt: {transitions}")
+#
 #
 # print("\n")
 #
